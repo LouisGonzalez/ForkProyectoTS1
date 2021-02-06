@@ -22,7 +22,7 @@ public class ImagenDb {
     
     public Imagen getImagen(int id){
         try {
-            PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM rutaImagen WHERE id=?;");
+            PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT * FROM rutaimagen WHERE id=?;");
             statement.setInt(1, id);
             ResultSet resultado = statement.executeQuery();
             if(resultado.next()) return instanciarDeResultSet(resultado);

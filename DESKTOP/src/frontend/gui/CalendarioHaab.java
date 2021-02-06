@@ -31,6 +31,7 @@ public class CalendarioHaab extends javax.swing.JFrame {
      */
     public CalendarioHaab() {
         initComponents();
+        setLocationRelativeTo(null);
         InformacionDb accesoInf = new InformacionDb();
         date.setDate(fecha);
         infHaab.setText(accesoInf.getInformacion("inf_haab_escritorio").getDescripcionEscritorio());
@@ -502,11 +503,8 @@ public class CalendarioHaab extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel{
-        
         private Image imagen;
-        
         public void paint(Graphics g){
-            
             imagen = new ImageIcon(getClass().getResource("/images/Fondo Calendario Haab.png")).getImage();
             g.drawImage(imagen,0,0,this.getWidth(),this.getHeight(),this);
             setOpaque(false);

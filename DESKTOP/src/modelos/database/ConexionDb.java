@@ -20,7 +20,7 @@ public class ConexionDb {//Aquí la conexion a la base de datos
     //llenar con credenciales de su DB , datos de ejemplo
     final static String nombreBaseDatos = "calendariomaya";
     final static String usuario = "root";
-    final static String password = "josecarlos";
+    final static String password = "root";
 
     //Nos conectamos a nuestra db
     public static  Connection obtenerConexion() throws SQLException, ClassNotFoundException {
@@ -31,11 +31,9 @@ public class ConexionDb {//Aquí la conexion a la base de datos
                 String stringConnection = "jdbc:mysql://localhost/"+nombreBaseDatos+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                 conexion = DriverManager.getConnection(stringConnection, usuario, password);
                 
-            }//en caso de que no se encuentre la base de datos 
-            catch (SQLException ex) {
+            } catch (SQLException ex) {
                 ex.printStackTrace();
-            }//en caso de que no encuentre la libreria 
-            catch (ClassNotFoundException ex) {
+            } catch (ClassNotFoundException ex) {
               ex.printStackTrace();
             }
         }
