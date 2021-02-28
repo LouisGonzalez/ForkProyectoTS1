@@ -22,20 +22,13 @@ public class main {
      */
     public static void main(String[] args) {
         try {
-            // TODO code application logic here
-            
             //INICIAMOS CONECTANDO  DB  
             ConexionDb.obtenerConexion();
-            
-//            Usuario user  = new Usuario();
-//            MenuPrincipal menu = new MenuPrincipal(user);
-//            menu.setVisible(true);
 /*
             Comenté el login dado que entiendo, se usa para realizar ciertas actividades (aceptar hechos
             agregarlos) pero la funcionalidad del sistema en sí es abierto, habría que agregar una opcion
             pero no obligar a iniciar sesion ¿no? xd
 */
-
             Login logeo = new Login();
             logeo.iniciar();
             //logeo.setVisible(true);

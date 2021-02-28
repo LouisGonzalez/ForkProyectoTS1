@@ -34,8 +34,9 @@ public class Login extends javax.swing.JFrame {
         Icon iconoExit = new ImageIcon(imIconExit.getImage().getScaledInstance(botonSalir.getWidth(), botonSalir.getHeight(), Image.SCALE_DEFAULT));
         botonSalir.setIcon(iconoExit);
     }
+    
     //logue al usuario
-    public void loguear(){
+    public void loguear(){ 
         Usuario usuario = usuarioDb.validacionUsuario(textFieldCorreo.getText(), passFieldContrasenia.getText());
         if(usuario!=null){
             System.out.println("Se logueo xD");
@@ -43,7 +44,7 @@ public class Login extends javax.swing.JFrame {
             menu = new MenuPrincipal(usuario);
             menu.setVisible(true);
             this.setVisible(false);
-        }else{
+        }else {
             System.out.println("NO Se logueo xD");
             JOptionPane.showMessageDialog(null, "El Correo o Contraseña son Incorrectos");
         }
@@ -79,11 +80,19 @@ public class Login extends javax.swing.JFrame {
             }else{
                 System.out.println("NO Se logueo xD");
                 this.setVisible(true);
-        }
-        }else{
+            }
+        } else {
             this.setVisible(true);
         }
     }
+    
+    
+    
+    public void iniciarno2(){
+        archivoLogin.verificarExitenciaArchivo();
+    }
+    
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
