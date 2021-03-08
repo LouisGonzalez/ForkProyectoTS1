@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelos.objetos.HechoHistorico;
 
@@ -20,7 +22,25 @@ public class HechoHistoricoDb {
     
     private Mensaje mensajes = new Mensaje();
     
-     public void crearHH(HechoHistorico hhACrear) {//creamos un nuevo hecho historico
+    public int verUltimoId(){
+        Integer ultimoId = null;
+        try {
+            PreparedStatement statement = ConexionDb.conexion.prepareStatement("SELECT MAX(id) AS id from hechohistorico");
+            ResultSet result = statement.executeQuery();
+            while(result.next()){
+                ultimoId = result.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(HechoHistoricoDb.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(ultimoId == null){
+            ultimoId = 0;
+        }
+        return ultimoId;
+    }
+    
+    
+    public void crearHH(HechoHistorico hhACrear) {//creamos un nuevo hecho historico
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("INSERT INTO hechohistorico "
                     + "(id, fechaInicio,fechaFinalizacion, titulo, descripcion) "
@@ -33,6 +53,7 @@ public class HechoHistoricoDb {
             statement.executeUpdate();
             mensajes.informacion("Se ha creado el hecho historico con éxito.");
         } catch (SQLException ex) {
+            System.out.println(ex);
             mensajes.error("No se pudo guardar el hecho historico. Ingrese otro hecho historico. ");
         }
     }
@@ -56,10 +77,10 @@ public class HechoHistoricoDb {
 
     }
 
-    public void eliminarHechoHistorico(HechoHistorico hhAEliminar) {//eliminamos hecho historico
+    public void eliminarHechoHistorico(int id) {//eliminamos hecho historico
         try {
             PreparedStatement statement = ConexionDb.conexion.prepareStatement("DELETE FROM hechohistorico WHERE id=?;");
-            statement.setInt(1, hhAEliminar.getId());
+            statement.setInt(1, id);
             statement.executeUpdate();
             mensajes.informacion("Se eliminó el hecho historico con exito.");
         } catch (SQLException ex) {

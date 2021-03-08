@@ -132,7 +132,6 @@ public class CalcularFecha extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
         ManejadorCalcular manejadorCalcular = ManejadorCalcular.getInstancia();
 //        System.out.println("DATE " + date.getCalendar().getTime());
         lblImg.setIcon(manejadorCalcular.getIcon(nahual(timeCholqij(date.getCalendar().getTime().getTime()))));

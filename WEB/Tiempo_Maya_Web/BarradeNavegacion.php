@@ -10,14 +10,15 @@
         <li><a href="LineaDeTiempo.php">Linea del Tiempo</a></li>
         <li><a href="CalendarioHaab.php">Calendario Haab</a></li>
         <li><a href="CalendarioCholqij.php">Calendario Cholquij</a></li>
-        <li><a href="#">Rueda Calendarica</a></li>
+        <li><a href="RuedaCalendarica.php">Rueda Calendarica</a></li>
         <li><a href="nahuales.php">Nahuales</a></li>
         <?php 
         if (isset($_SESSION['nombre'])) {
-            echo '<li><a href="cerrarSesion.php">Cerrar Sesion</a></li>';
+            echo '<li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
+            <li><a href="MiPerfil.php">Mi Perfil></a></li>';
+
         }else{
-            echo '<li><a href="iniciarSesion.php">Iniciar Sesion</a></li>
-            <li><a href="#">Registrarse</a></li>';
+            echo '<li><a href="iniciarSesion.php">Iniciar Sesion</a></li>';
         }
         
         ?>

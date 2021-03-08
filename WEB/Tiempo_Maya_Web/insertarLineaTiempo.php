@@ -1,8 +1,7 @@
 <?php
 session_start();
-//$conexion = new mysqli("servidor","usuario","clave","bd")
-$conexion = new mysqli("localhost", "administrador", "Admin.123321", "LineaTiempo");
-$sql = "SELECT * FROM Categoria ";
+$conexion = new mysqli("localhost", "root", "root", "calendariomaya");
+$sql = "SELECT * FROM categoria ";
 //$sql .= " ORDER BY nombre";
 $categorias = $conexion->query($sql);
 $cont = 1;
@@ -26,7 +25,7 @@ $cont = 1;
 <body style="background: url(./img/fondo.png) top center;color:black">
     <div>
         <header id="header" style="background-color: #1C1C1C;">
-            <?php include 'BarradeNavegacion.html'; ?>>
+            <?php include 'BarradeNavegacion.php'; ?>>
         </header>
     </div>
 
@@ -44,7 +43,7 @@ $cont = 1;
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Fecha Del </label>
                         <div class="col-sm-10">
-                            <input type="date" name="fechaInicio" id="FInicio" class="form-control" value="<?php echo date("Y-m-d"); ?>">
+                            <input type="date" name="fechaInicio" id="fechaInicio" class="form-control" value="<?php echo date("Y-m-d"); ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -62,9 +61,9 @@ $cont = 1;
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="validatedInputGroupSelect" style="color: black;">CATEGORIA: </label>
                         </div>
-                        <select class="custom-select" id="validatedInputGroupSelect" required name="categoria">
+                        <select class="custom-select"  id="idCategoria" name="idCategoria" required>
                             <?php foreach ($categorias as $area) : ?>
-                                <option value="<?php echo $area['idCategoria']; ?>"> <?php echo $area['nombre']; ?> </option>
+                                <option value="<?php echo $area['id']; ?>"> <?php echo $area['nombre']; ?> </option>
                             <?php endforeach; ?>
                         </select>
                     </div>

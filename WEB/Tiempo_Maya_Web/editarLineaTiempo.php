@@ -1,22 +1,18 @@
 <?php
 session_start();
-//$conexion = new mysqli("servidor","usuario","clave","bd")
-$conexion = new mysqli("localhost", "administrador", "Admin.123321", "LineaTiempo");
-$sql = "SELECT * FROM Categoria ";
+$conexion = new mysqli("localhost", "root", "root", "calendariomaya");
+$sql = "SELECT * FROM categoria";
 //$sql .= " ORDER BY nombre";
 $sql2 = "CALL mostrarHechosPor(".$_POST['idHecho'].");";
 $resultado = $conexion->query($sql2);
-$conexion2 = new mysqli("localhost", "administrador", "Admin.123321", "LineaTiempo");
+$conexion2 = new mysqli("localhost", "root", "root", "calendariomaya");
 $categorias = $conexion2->query($sql);
 foreach ($resultado as $miHecho) : 
     $hecho = $miHecho;
 endforeach;
-
 ?>
-
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-
 <head>
     <title>Linea de Tiempo</title>
     <meta charset="utf-8">
@@ -44,7 +40,7 @@ endforeach;
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Titulo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="titulo" value="<?php echo $hecho['titulo']; ?>" required>
+                            <input type="text" class="form-control" name="titulo" value="<?php echo $hecho['titulo']; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -68,11 +64,11 @@ endforeach;
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="validatedInputGroupSelect" style="color: black;">CATEGORIA: </label>
                         </div>
-                        <select class="custom-select" id="validatedInputGroupSelect" required name="categoria">
+                        <select class="custom-select" id="validatedInputGroupSelect" required name="categoria">-->
                             <?php foreach ($categorias as $area) : ?>
-                                <option value="<?php echo $area['idCategoria']; ?>"> <?php echo $area['nombre']; ?> </option>
+                                <option value="<?php echo $area['id']; ?>"> <?php echo $area['nombre']; ?> </option>
                             <?php endforeach; ?>
-                        </select>
+                     <!--   </select>
                     </div>-->
                     <div class="input-group" style="padding-top: 40px;">
 

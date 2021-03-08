@@ -1,0 +1,94 @@
+
+.navNahuales{
+    /* background: black; */
+    display: flex;
+    justify-content: center;
+    /* width: 1000px; */
+}
+
+.navleft {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-right-width: 1em;
+  /* border-bottom-width: thick; */
+    border-left-width: 1em;
+}
+.navright {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.nahuales1 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: rgba(0,0,0,0.6);*/
+}
+
+.imagen1 {
+	/*content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);*/
+    opacity: 0.2;
+}
+
+.imagen11 {
+	/*content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);*/
+    /* opacity: 0.2; */
+}
+
+.nahuales2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-right-width: 110px;
+    border-left-width: 110px
+}
+.nahuales3{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}z
+
+.buttonDr {
+    /*background: #92c7eb;*/
+ background-image: url("../img/derecha.png");
+ background-size: cover;
+ background-position: center;
+ display: inline-block;
+ border: none;
+ padding: 20px;
+ width: 70px;
+ border-radius: 900px;
+ height: 70px;
+ /*transition: all 0.5s;
+ cursor: pointer;*/
+}
+
+.buttonIz {
+    /*background: #92c7eb;*/
+ background-image: url("../img/izquierda.png");
+ background-size: cover;
+ background-position: center;
+ display: inline-block;
+ border: none;
+ padding: 20px;
+ width: 70px;
+ border-radius: 900px;
+ height: 70px;
+ /*transition: all 0.5s;
+ cursor: pointer;*/
+}
+
+

@@ -14,12 +14,16 @@ import modelos.objetos.HechoHistorico;
  * @author sergio
  */
 public class AgregarEvento extends javax.swing.JFrame {
-private LineaDeTiempo linea;
+    
+
+    private LineaDeTiempo linea;
+    private HechoHistoricoDb hecho = new HechoHistoricoDb();
     /**
      * Creates new form AgregarEvento
      */
     public AgregarEvento() {
         initComponents();
+        setLocationRelativeTo(null);
     }
         public void setLinea(LineaDeTiempo linea) {
         this.linea = linea;
@@ -126,11 +130,11 @@ private LineaDeTiempo linea;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Date date1= new Date(1000, 1, 1);
         Date date2= new Date(1001, 1, 1);
-        HechoHistoricoDb hechoHistoricoDb= new HechoHistoricoDb();
-        
-        HechoHistorico edt= new HechoHistorico(hechoHistoricoDb.leerHechosHistoricos().size()+2, date1, date2,titulo.getText(), descripcion.getText());
+        HechoHistoricoDb hechoHistoricoDb= new HechoHistoricoDb();        
+        HechoHistorico edt= new HechoHistorico(hecho.verUltimoId()+1, date1, date2,titulo.getText(), descripcion.getText());
         hechoHistoricoDb.crearHH(edt);
         linea.obtenerHechos();
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

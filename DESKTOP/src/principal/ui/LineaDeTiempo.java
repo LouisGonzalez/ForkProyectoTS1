@@ -232,8 +232,10 @@ public class LineaDeTiempo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnCholqij4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij4ActionPerformed
-
+        EliminacionEvento eliminado = new EliminacionEvento(null, true);
+        eliminado.setVisible(true);
     }//GEN-LAST:event_btnCholqij4ActionPerformed
+    
     private void addPrimerHecho() {
         System.out.println(eventos.size());
         if (eventos.size() > 0) {

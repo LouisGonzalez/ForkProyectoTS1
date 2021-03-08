@@ -23,6 +23,7 @@ import modelos.objetos.Usuario;
 import principal.backend.perfil_usuario.Informacion;
 import principal.frontend.gui.calendari_cholquij.FrameCalendario;
 import principal.frontend.gui.perfil_usuario.FramePerfil;
+import principal.frontend.gui.ruedaCalendarica.FrameRueda;
 import principal.ui.EventoDeTiempo;
 import principal.ui.LineaDeTiempo;
 
@@ -232,7 +233,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCholqij1ActionPerformed
 
     private void btnCholqij2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCholqij2ActionPerformed
-        JOptionPane.showMessageDialog(null, "La rueda calendarica no funciona");
+        FrameRueda rueda = new FrameRueda(null, true);
+        rueda.setVisible(true);
     }//GEN-LAST:event_btnCholqij2ActionPerformed
 
     private void btnNahualesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNahualesActionPerformed
